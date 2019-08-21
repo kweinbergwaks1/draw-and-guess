@@ -1,0 +1,5 @@
+{
+	"hard": ["contamination", "christmas", "landscape"],
+	"medium": ["sunset", "discount", "success"],
+	"easy": ["happiness", "kitchen", "bed"]
+}
