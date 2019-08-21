@@ -1,6 +1,6 @@
 /* iPhone 6, 7, 8 ----------- */
 @media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2){
-.App {
+  .App {
     text-align: center;
   }
 
@@ -96,6 +96,208 @@
 }
 
 @media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
+  .App {
+    text-align: center;
+  }
+
+  .App-header {
+    background-image: linear-gradient(#ffeb3b70, #0000008a);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+
+  .header-title {
+    font-weight: 850;
+    font-family: monospace;
+  }
+
+  .App-body {
+    background-color: rgb(66, 59, 2);
+    opacity: 0.6;
+    min-height: 91.5vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+
+  .status-message {
+    color: white;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+
+  .button {
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    background-color: white;
+    color: black;
+    border: 2px solid #ffeb3bd1;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    cursor: pointer;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    outline: none;
+    position: relative;
+  }
+
+  .word-choosing-container {
+    position: fixed;
+    top: 50%;
+  }
+
+  .choose-hard {
+    margin-right: 10px;
+  }
+
+  .choose-medium {
+    margin-right: 10px;
+  }
+
+  .send-draw {
+    margin-top: 10px;
+  }
+
+  .input-guessing {
+    margin-right: 10px;
+    letter-spacing: 1px;
+    font-weight: 700;
+    outline: none;
+    position: relative;
+    font-family: inherit;
+    font-size: inherit;
+  }
+
+  .guess {
+    margin-top: 30px;
+  }
+
+  .continue {
+    margin-top: 50px;
+  }
+
+  .points-container {
+    position: fixed;
+    bottom: 0;
+  }
+
+  .points-text {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: 700;
+  }
+}
+
+/* Galaxy S5 ----------- */
+@media only screen and (min-device-width: 640px) and (max-device-height: 360px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 3){
+  .App {
+    text-align: center;
+  }
+
+  .App-header {
+    background-image: linear-gradient(#ffeb3b70, #0000008a);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+
+  .header-title {
+    font-weight: 850;
+    font-family: monospace;
+  }
+
+  .App-body {
+    background-color: rgb(66, 59, 2);
+    opacity: 0.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+
+  .status-message {
+    color: white;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+
+  .button {
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    background-color: white;
+    color: black;
+    border: 2px solid #ffeb3bd1;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    cursor: pointer;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    outline: none;
+    position: relative;
+  }
+
+  .word-choosing-container {
+    position: fixed;
+    top: 50%;
+  }
+
+  .choose-hard {
+    margin-right: 10px;
+  }
+
+  .choose-medium {
+    margin-right: 10px;
+  }
+
+  .send-draw {
+    margin-top: 10px;
+  }
+
+  .input-guessing {
+    margin-right: 10px;
+    letter-spacing: 1px;
+    font-weight: 700;
+    outline: none;
+    position: relative;
+    font-family: inherit;
+    font-size: inherit;
+  }
+
+  .guess {
+    margin-top: 30px;
+  }
+
+  .continue {
+    margin-top: 50px;
+  }
+
+  .points-container {
+    margin-top: 40px;
+  }
+  
+  .points-text {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: 700;
+  }
+}
+
+@media only screen and (min-device-width: 360px) and (max-device-height: 640px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 3){
   .App {
     text-align: center;
   }
