@@ -2,7 +2,6 @@
 
 ## Requirements
 
-- react-scripts
 - concurrently
 - nodemon
 - yarn
