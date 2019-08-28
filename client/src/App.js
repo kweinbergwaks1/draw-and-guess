@@ -20,16 +20,15 @@ class App extends Component {
       valueInputGuessing: ""
     }
 
-    this.state.socket.on('drawReceived', draw => {
-      this.setState({draw: draw})
-      if(this.state.yourTurn) {
-        this.setState({message: "Guess the drawing!"})
-      } else {
-        this.setState({message: 'The other player is guessing...'})
-      }
-    });
     this.state.socket.on('user', user => {
       this.setState({user: user})
+    });
+    this.state.socket.on('turn', player => {
+      if (player === this.state.user) {
+        this.setState({message: "You're up. Choose a difficulty and receive a word", yourTurn: true})
+      } else {
+        this.setState({message: "The other player is choosing a word...", yourTurn: false})
+      }   
     });
     this.state.socket.on('wordReceived', word => {
       this.setState({word: word})
@@ -39,14 +38,14 @@ class App extends Component {
         this.setState({message: "The other player is drawing"})
       }
     });
-    this.state.socket.on('turn', player => {
-      if (player === this.state.user) {
-        this.setState({message: "You're up. Choose a difficulty and receive a word", yourTurn: true})
+    this.state.socket.on('drawReceived', draw => {
+      this.setState({draw: draw})
+      if(this.state.yourTurn) {
+        this.setState({message: "Guess the drawing!"})
       } else {
-        this.setState({message: "The other player is choosing a word...", yourTurn: false})
-      }   
+        this.setState({message: 'The other player is guessing...'})
+      }
     });
-
     this.state.socket.on('wordGuessed', points => {
       this.setState({message: "Word guessed!", points: points, showContinue:true, yourTurn: false, valueInputGuessing:""})
     });
@@ -59,14 +58,13 @@ class App extends Component {
   renderChoosing() {
     if(this.state.yourTurn && this.state.word === null) {
       return(
-      <div className="word-choosing-container">
-        <button className="button choose-hard" onClick={() => this.chooseAndSendWord("hard")}> Hard </button>
-        <button className="button choose-medium" onClick={() => this.chooseAndSendWord("medium")}> Medium </button>
-        <button className="button choose-easy" onClick={() => this.chooseAndSendWord("easy")}> Easy </button>
-      </div>
-    )
+        <div className="word-choosing-container">
+          <button className="button choose-hard" onClick={() => this.chooseAndSendWord("hard")}> Hard </button>
+          <button className="button choose-medium" onClick={() => this.chooseAndSendWord("medium")}> Medium </button>
+          <button className="button choose-easy" onClick={() => this.chooseAndSendWord("easy")}> Easy </button>
+        </div>
+      )
     }
-    
   }
 
   chooseAndSendWord(difficulty) {
