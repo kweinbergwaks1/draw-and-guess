@@ -121,17 +121,11 @@ class App extends Component {
     }
   }
 
-  updateInputValue(evt) {
-    this.setState({
-      valueInputGuessing: evt.target.value
-    });
-  }
-
   renderContinue() {
     if(this.state.showContinue) {
       return(
         <div>
-          <button className="button continue" onClick={() =>  this.continueGame()}> Continue </button>
+          <button className="button continue" onClick={() => this.continueGame()}> Continue </button>
         </div>
       )
     }

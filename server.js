@@ -74,7 +74,7 @@ io.on('connection', function (socket) {
   socket.on('continue', function(user) {
   	// Var 'canContinue' used to wait both players to click continue
   	if(canContinue) {
-  		// If word is not guessed, the player who drawed, draws again
+  		// If word is not guessed, the player who drew, draws again
   		if(notGuessed) {
   			player = player === 'one' ? 'two' : 'one'
         notGuessed = false;
