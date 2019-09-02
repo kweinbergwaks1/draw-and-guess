@@ -7,7 +7,7 @@ let points = 0
 const players = {'one': null, 'two': null}
 let player = 'one'
 let canContinue = false
-let wordGuessed = false;
+let wordGuessed = false
 
 
 function reset() {
@@ -18,8 +18,8 @@ function reset() {
   players['one'] = null
   players['two'] = null
   player = 'one'
-  canContinue = false;
-  wordGuessed = false;
+  canContinue = false
+  wordGuessed = false
 }
 
 io.on('connection', function (socket) {
@@ -52,17 +52,6 @@ io.on('connection', function (socket) {
   	difficulty = difficultyChosen
   })
 
-  socket.on('wordGuessing', function(wordGuessing) {
-  	if(wordGuessing === word) {
-  		points += difficulty
-  		notGuessed = false;
-  		io.emit('wordGuessed', points)
-  	} else {
-  		notGuessed = true;
-  		io.emit('notGuessed')
-  	}
-  })
-
   socket.on('draw', function (urlDraw) {
     // Toggle the player
     player = player === 'one' ? 'two' : 'one'
@@ -71,7 +60,18 @@ io.on('connection', function (socket) {
     io.emit('drawReceived', urlDraw)
   })
 
-  socket.on('continue', function(user) {
+  socket.on('wordGuessing', function(wordGuessing) {
+    if(wordGuessing === word) {
+      points += difficulty
+      notGuessed = false;
+      io.emit('wordGuessed', points)
+    } else {
+      notGuessed = true;
+      io.emit('notGuessed')
+    }
+  })
+
+  socket.on('continue', function() {
   	// Var 'canContinue' used to wait both players to click continue
   	if(canContinue) {
   		// If word is not guessed, the player who drew, draws again
