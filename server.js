@@ -44,8 +44,8 @@ io.on('connection', function (socket) {
   })
 
   socket.on('word', function(wordChosen) {
-  	word = wordChosen;
-  	io.emit('wordReceived', wordChosen);
+  	word = wordChosen
+  	io.emit('wordReceived', wordChosen)
   })
 
   socket.on('difficulty', function(difficultyChosen) {
@@ -63,10 +63,10 @@ io.on('connection', function (socket) {
   socket.on('wordGuessing', function(wordGuessing) {
     if(wordGuessing === word) {
       points += difficulty
-      notGuessed = false;
+      notGuessed = false
       io.emit('wordGuessed', points)
     } else {
-      notGuessed = true;
+      notGuessed = true
       io.emit('notGuessed')
     }
   })
@@ -77,7 +77,7 @@ io.on('connection', function (socket) {
   		// If word is not guessed, the player who drew, draws again
   		if(notGuessed) {
   			player = player === 'one' ? 'two' : 'one'
-        notGuessed = false;
+        notGuessed = false
   		}
   		io.emit('turn', player)
   		canContinue = false
