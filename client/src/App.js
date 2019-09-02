@@ -113,7 +113,7 @@ class App extends Component {
     if(this.state.yourTurn && this.state.word != null && this.state.draw != null) {
       return (
         <div>
-          <img src={this.state.draw} /><br />
+          <img src={this.state.draw} alt="Other player's draw" /><br />
           <input className="input-guessing" type="text" value={this.state.valueInputGuessing} onChange={evt => this.setState({valueInputGuessing: evt.target.value})} />
           <button className="button guess" onClick={() => this.state.socket.emit('wordGuessing', this.state.valueInputGuessing)}> Guess </button>
         </div>
@@ -150,7 +150,7 @@ class App extends Component {
         <header className="App-header">
           <p className="header-title">Draw and Guess</p>
         </header>
-        <body className="App-body">
+        <div className="App-body">
           <h1 className="status-message">
             {this.state.message}
           </h1>
@@ -159,7 +159,7 @@ class App extends Component {
           {this.renderGuessing()}
           {this.renderContinue()}
           {this.renderPoints()}
-        </body>
+        </div>
       </div>
     )
   }
